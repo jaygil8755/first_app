@@ -29,22 +29,17 @@ uploaded_file = st.file_uploader("이미지를 업로드하세요", type=['png',
 
 ############################################################################################
 st.subheader("Easy OCR - 이미지에서 글자를 추출")
+import easyocr
 
-@st.cache
-def load_model(): 
-    reader = ocr.Reader(['ko', 'en'], model_storage_directory='.')
-    return reader 
-
-reader = load_model() #load model
-
+# 한글, 영어 설정
+reader = easyocr.Reader(['ko','en'], gpu=False)
 if uploaded_file is not None:
+    input_image = Image.open(uploaded_file)
+    st.image(input_image, caption='원본 이미지', use_column_width=True)
 
-    input_image = Image.open(uploaded_file)  
-    st.image(input_image) 
-
-    with st.spinner("🤖 AI is at Work! "):       
-
-        result = reader.readtext(uploaded_file, detail = 0) 
+    with st.spinner("🤖 AI is at Work! "):   
+        result = reader.readtext(np.array(input_image))
+        # result = reader.readtext(uploaded_file, detail = 0) 
         st.write(result)
     st.balloons()
 
