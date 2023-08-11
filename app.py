@@ -6,9 +6,9 @@ import easyocr as ocr  #OCR
 import numpy as np
 
 # set page config
-st.set_page_config(layout="centered")
+st.set_page_config(page_title='My_First_Image_App', layout="centered")
 st.subheader('[미니프로젝트] 이미지 배경제거 + 글자추출 웹서비스')
-st.markdown('### :sunglasses: Remove Background - `rembg`')
+st.markdown('### :arrow_forward::sunglasses: Remove Background - `rembg`')
 st.markdown("#### sample result")
 image_comparison(
     img1 = "https://raw.githubusercontent.com/jaygil8755/first_app/3ccd1f9edd28745c8c7f63f1c839f87d29d46ab8/src/animal-1.jpg",
@@ -19,7 +19,7 @@ image_comparison(
     make_responsive=True,
     in_memory=True)
 
-st.markdown("### :ab:글자 추출(OCR) - `easyocr`")
+st.markdown("### :arrow_forward: :ab:글자 추출(OCR) - `easyocr`")
 
 option = st.selectbox(
     '어떤 서비스를 원하시나요?',
