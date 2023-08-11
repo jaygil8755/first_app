@@ -19,13 +19,13 @@ image_comparison(
     make_responsive=True,
     in_memory=True)
 
-st.markdown("## Optical Character Recognition - Using `easyocr`, `streamlit`")
+st.markdown("## 글자 추출(OCR) - Using `easyocr`, `streamlit`")
 
 option = st.selectbox(
     '어떤 서비스를 원하시나요?',
     ('배경제거', '글자추출'))
 
-st.write('You selected:', option)
+st.write(f'{option}을 선택하셨습니다.')
 if option == '배경제거':
     uploaded_file = st.file_uploader("이미지를 업로드하세요", type=['png', 'jpg', 'jpeg'])
 
@@ -51,15 +51,15 @@ if option == '글자추출':
         st.image(input_image) #display image
     
         with st.spinner("🤖 AI is at Work! "):
-            
+
+            result = reader.readtext(image, detail = 0)
     
-            result = reader.readtext(np.array(input_image))
+            # result = reader.readtext(np.array(input_image))
+
     
-            result_text = [] #empty list for results
-    
-    
-            for text in result:
-                result_text.append(text[1])
+            # result_text = [] #empty list for results
+            # for text in result:
+            #     result_text.append(text[1])
     
             st.write(result_text)
         #st.success("Here you go!")
