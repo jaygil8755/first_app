@@ -37,19 +37,15 @@ def load_model():
 
 reader = load_model() #load model
 
-if image is not None:
+if uploaded_file is not None:
 
-    input_image = Image.open(image)  
+    input_image = Image.open(uploaded_file)  
     st.image(input_image) 
 
     with st.spinner("🤖 AI is at Work! "):       
 
-        result = reader.readtext(np.array(input_image))
-        result_text = []  
-        for text in result:
-            result_text.append(text[1])
-        st.write(result_text)
-    #st.success("Here you go!")
+        result = reader.readtext(input_image, detail = 0) 
+        st.write(result)
     st.balloons()
 else:
     st.write("Upload an Image")
