@@ -1,7 +1,7 @@
 import streamlit as st
 from rembg import remove
 from PIL import Image
-from streamlit-image-comparison import image_comparision
+from streamlit_image_comparison import image_comparision
 st.subheader('이미지 배경제거 서비스')
 st.markdown("## sample result")
 image_comparison(
