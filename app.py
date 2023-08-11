@@ -3,7 +3,7 @@ from rembg import remove
 from PIL import Image
 from streamlit_image_comparison import image_comparison
 import easyocr as ocr  #OCR
-import numpy as np #Image Processing 
+import numpy as np
 
 # set page config
 st.set_page_config(layout="centered")
@@ -38,8 +38,8 @@ if uploaded_file is not None:
     st.image(input_image, caption='원본 이미지', use_column_width=True)
 
     with st.spinner("🤖 AI is at Work! "):   
-        result = reader.readtext(np.array(input_image))
-        # result = reader.readtext(uploaded_file, detail = 0) 
+        # result = reader.readtext(np.array(input_image))
+        result = reader.readtext(input_image, detail = 0) 
         st.write(result)
     st.balloons()
 
