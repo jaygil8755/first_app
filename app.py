@@ -19,7 +19,7 @@ image_comparison(
     make_responsive=True,
     in_memory=True)
 
-st.markdown("## 글자 추출(OCR) - Using `easyocr`, `streamlit`")
+st.markdown("## 글자 추출(OCR) - Using `easyocr`")
 
 option = st.selectbox(
     '어떤 서비스를 원하시나요?',
@@ -63,6 +63,9 @@ if option == '글자추출':
         st.balloons()
     else:
         st.write("Upload an Image")
+
+st.caption("감사합니다. 궁금하신 사항은 jaygil8755@gmail.com으로 문의해주세요")
+
 
 
 
