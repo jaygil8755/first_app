@@ -8,7 +8,7 @@ import numpy as np
 # set page config
 st.set_page_config(layout="centered")
 st.subheader('[미니프로젝트] 이미지 배경제거 + 글자추출 웹서비스')
-st.markdown('## Remove Background - Using `rembg`')
+st.markdown('### Remove Background - Using `rembg`')
 st.markdown("#### sample result")
 image_comparison(
     img1 = "https://raw.githubusercontent.com/jaygil8755/first_app/3ccd1f9edd28745c8c7f63f1c839f87d29d46ab8/src/animal-1.jpg",
@@ -19,7 +19,7 @@ image_comparison(
     make_responsive=True,
     in_memory=True)
 
-st.markdown("## 글자 추출(OCR) - Using `easyocr`")
+st.markdown("### 글자 추출(OCR) - Using `easyocr`")
 
 option = st.selectbox(
     '어떤 서비스를 원하시나요?',
