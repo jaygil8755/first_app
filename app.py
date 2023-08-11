@@ -25,7 +25,7 @@ option = st.selectbox(
     '어떤 서비스를 원하시나요?',
     ('배경제거', '글자추출'))
 
-st.write(f'{option}을 선택하셨습니다.')
+st.info(f'당신의 선택은: {option}')
 if option == '배경제거':
     uploaded_file = st.file_uploader("이미지를 업로드하세요", type=['png', 'jpg', 'jpeg'])
 
