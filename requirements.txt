@@ -2,3 +2,4 @@ pillow
 streamlit
 rembg
 streamlit-image-comparison
+easyocr
