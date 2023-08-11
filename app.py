@@ -39,7 +39,7 @@ if uploaded_file is not None:
 
     with st.spinner("🤖 AI is at Work! "):   
         # result = reader.readtext(np.array(input_image))
-        result = reader.readtext(input_image, detail = 0) 
+        result = reader.readtext(uploaded_file, detail = 0) 
         st.write(result)
     st.balloons()
 
