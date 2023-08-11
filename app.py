@@ -66,6 +66,16 @@ if option == '글자추출':
 
 st.caption("감사합니다. 궁금하신 사항은 jaygil8755@gmail.com으로 문의해주세요")
 
+# ---- HIDE STREAMLIT STYLE ----
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 
 
 
