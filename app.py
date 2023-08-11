@@ -40,7 +40,7 @@ if option == '글자추출':
     image = st.file_uploader(label = "Upload your image here",type=['png','jpg','jpeg'])
     @st.cache
     def load_model(): 
-        reader = ocr.Reader(['ko', 'en'],model_storage_directory='.')
+        reader = ocr.Reader(['ko', 'en'], model_storage_directory='.')
         return reader 
     
     reader = load_model() #load model
@@ -48,7 +48,7 @@ if option == '글자추출':
     if image is not None:
     
         input_image = Image.open(image) #read image
-        st.image(input_image) #display image
+        st.image(input_image, caption='업로드한 이미지', use_column_width=True)
     
         with st.spinner("🤖 AI is at Work! "):
 
@@ -59,22 +59,21 @@ if option == '글자추출':
                 result_text.append(text[1])
     
             st.write(result_text)
-        #st.success("Here you go!")
         st.balloons()
     else:
         st.write("Upload an Image")
 
 st.caption("감사합니다. 궁금하신 사항은 jaygil8755@gmail.com으로 문의해주세요")
 
-# ---- HIDE STREAMLIT STYLE ----
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
+# # ---- HIDE STREAMLIT STYLE ----
+# hide_st_style = """
+#             <style>
+#             #MainMenu {visibility: hidden;}
+#             footer {visibility: hidden;}
+#             header {visibility: hidden;}
+#             </style>
+#             """
+# st.markdown(hide_st_style, unsafe_allow_html=True)
 
 
 
