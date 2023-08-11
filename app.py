@@ -23,7 +23,7 @@ st.markdown("## Optical Character Recognition - Using `easyocr`, `streamlit`")
 
 option = st.selectbox(
     '어떤 서비스를 원하시나요?',
-    ('배경제거', '글자추출')
+    ('배경제거', '글자추출'))
 
 st.write('You selected:', option)
 if option == '배경제거':
