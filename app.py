@@ -30,9 +30,9 @@ if option == '배경제거':
     uploaded_file = st.file_uploader("이미지를 업로드하세요", type=['png', 'jpg', 'jpeg'])
 
     if uploaded_file is not None:
-        input_image = Image.open(uploaded_file)
+        input_ = Image.open(uploaded_file)
         st.image(input_image, caption='원본 이미지', use_column_width=True)
-        output = remove(input)
+        output = remove(input_)
         st.image(output, caption='배경 제거 이미지', use_column_width=True)
 
 if option == '글자추출':
