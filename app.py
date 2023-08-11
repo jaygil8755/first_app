@@ -22,8 +22,8 @@ image_comparison(
 uploaded_file = st.file_uploader("이미지를 업로드하세요", type=['png', 'jpg', 'jpeg'])
 
 # if uploaded_file is not None:
-#     input = Image.open(uploaded_file)
-#     st.image(input, caption='원본 이미지', use_column_width=True)
+#     input_image = Image.open(uploaded_file)
+#     st.image(input_image, caption='원본 이미지', use_column_width=True)
 #     output = remove(input)
 #     st.image(output, caption='배경 제거 이미지', use_column_width=True)
 
@@ -44,10 +44,9 @@ if uploaded_file is not None:
 
     with st.spinner("🤖 AI is at Work! "):       
 
-        result = reader.readtext(input_image, detail = 0) 
+        result = reader.readtext(uploaded_file, detail = 0) 
         st.write(result)
     st.balloons()
-else:
-    st.write("Upload an Image")
+
 
 st.caption("수고하셨습니다.")
