@@ -3,5 +3,4 @@ streamlit
 rembg
 streamlit-image-comparison
 easyocr
-opencv
 numpy
