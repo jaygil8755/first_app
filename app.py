@@ -52,14 +52,11 @@ if option == '글자추출':
     
         with st.spinner("🤖 AI is at Work! "):
 
-            result = reader.readtext(image, detail = 0)
-    
-            # result = reader.readtext(np.array(input_image))
-
-    
-            # result_text = [] #empty list for results
-            # for text in result:
-            #     result_text.append(text[1])
+            # result = reader.readtext(image, detail = 0)    
+            result = reader.readtext(np.array(input_image))
+            result_text = [] #empty list for results
+            for text in result:
+                result_text.append(text[1])
     
             st.write(result_text)
         #st.success("Here you go!")
