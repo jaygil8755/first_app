@@ -7,7 +7,7 @@ import numpy as np
 
 # set page config
 st.set_page_config(layout="centered")
-
+st.subheader('[미니프로젝트] 이미지 배경제거 + 글자추출 웹서비스')
 st.markdown('## Remove Background - Using `rembg`')
 st.markdown("#### sample result")
 image_comparison(
